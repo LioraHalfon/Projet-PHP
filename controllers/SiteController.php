@@ -16,10 +16,7 @@ use app\views\site\accueil;
 
 
 require('C:\Users\liora\basic\models/modele.php');
-
 $articles= Modele::getMovie();
-
-
 require('C:\Users\liora\basic\views\site/accueil.php');
 
 
