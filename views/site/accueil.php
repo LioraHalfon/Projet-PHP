@@ -33,9 +33,17 @@
 
 
 <ul> <?php  
+use yii\helpers\Html;
 
- 
-     foreach ( $articles as $a) { ?>
+//si j'ai ecrit qqc sur ma barre de recherche, mais que rien ne correpond à ma recherche
+ if( count ($articles)== 0) { ?>
+
+	Aucun résultat ...
+
+<?php } 
+
+
+	 foreach ( $articles as $a) { ?>
 		  <li><?php echo $a['title'] ?> <br/>
           <?php
             $image = $a['image'] ;

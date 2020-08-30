@@ -4,21 +4,23 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 
-class Modele {
-    static function getMovie()
+class Modele extends Model {
+	
+	public $articles;
+    public function getMovie()
    {
 	
 	$url = "https://api.androidhive.info/json/movies.json";
 	
 	// afficher tous les films existant sur la page d'acceuil
-    if(!isset($_POST['q'])) {
+    if(!isset($_GET['q'])) {
 	    $articles = json_decode(file_get_contents($url), true); 
 		};
 
-		
+	
 	
     // afficher que les films correspondant à la recherche faite
-	if(isset($_POST['q']) AND !empty($_POST['q'])) {
+	if(isset($_GET['q']) AND !empty($_GET['q'])) {
 	   $q = htmlspecialchars($_GET['q']);
 
 	   $articles = json_decode(file_get_contents($url), true);
